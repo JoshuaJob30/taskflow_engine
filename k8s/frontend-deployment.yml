@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taskflow-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taskflow-frontend
+  template:
+    metadata:
+      labels:
+        app: taskflow-frontend
+    spec:
+      containers:
+        - name: taskflow-frontend
+          image: taskflow-frontend:v1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
