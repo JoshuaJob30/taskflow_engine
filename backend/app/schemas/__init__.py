@@ -1,3 +1,4 @@
+# backend/app/schemas/__init__.py
 from app.schemas.user_schema import UserCreate, UserResponse
 from app.schemas.project_schema import ProjectCreate, ProjectResponse
 from app.schemas.task_schema import (

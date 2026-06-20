@@ -10,4 +10,5 @@ class ProjectResponse(BaseModel):
     project_id: int
     name: str
     description: str | None = None
-    created_at: datetime | None
+    created_at: datetime | None = None
+    model_config = ConfigDict(from_attributes=True)

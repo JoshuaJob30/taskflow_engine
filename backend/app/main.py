@@ -1,3 +1,4 @@
+# backend/app/main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -35,11 +36,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(user_routes.router)
-app.include_router(project_routes.router)
-app.include_router(task_routes.router)
-app.include_router(report_routes.router)
+# app.include_router(user_routes.router)
+# app.include_router(project_routes.router)
+# app.include_router(task_routes.router)
+# app.include_router(report_routes.router)
 
+app.include_router(user_routes.router, prefix="/api")
+app.include_router(project_routes.router, prefix="/api")
+app.include_router(task_routes.router, prefix="/api")
+app.include_router(report_routes.router, prefix="/api")
 
 @app.get("/")
 def health_check():
